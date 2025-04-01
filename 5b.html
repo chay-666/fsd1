@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <title>Fixed Background Image</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh; 
+            background-image: url('s.jpg');
+            background-position: center 50vh; 
+            background-size: cover; 
+            background-attachment: fixed; 
+            transform: scaleX(-1);
+        }
+        .content {
+            height: 200vh; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        Scroll to see the effect!
+    </div>
+</body>
+</html>
