@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <title>Array Object Example</title>
+</head>
+<body>
+    <h2>Array Example</h2>
+    <button onclick="addItem()">Add Item</button>
+    <button onclick="removeItem()">Remove Item</button>
+    <h3 id="output"></h3>
+    <script>
+        let items = ["Apple", "Banana", "Cherry"]; // Array with initial values
+        function addItem() {
+            items.push("Orange"); // Add an item
+            document.getElementById("output").innerText = items.join(", ");
+        }
+        function removeItem() {
+            items.pop(); // Remove last item
+            document.getElementById("output").innerText = items.join(", ");
+        }
+    </script>
+</body>
+</html>
