@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Denomination Calculator</title>
+</head>
+<body>
+    <h2>Bank Note Denomination Calculator</h2>
+    <label>Enter the Amount: </label>
+    <input type="number" id="amountInput" min="1">
+    <button onclick="calculateDenominations()">Calculate</button>
+    <h3 id="output"></h3>
+    <script>
+        function calculateDenominations() {
+            let amount = parseInt(document.getElementById("amountInput").value);
+            if (isNaN(amount) || amount < 1) {
+                document.getElementById("output").innerText = "Please enter a valid amount!";
+                return;
+            }
+            let denominations = [100, 50, 20, 10, 5, 2, 1];
+            let result = `Denomination for Rs.${amount}:\n`;
+            for (let note of denominations) {
+                let count = Math.floor(amount / note);
+                if (count > 0) {
+                    result += `${count} - Rs.${note}'s\n`;
+                    amount %= note; // Reduce the amount
+                }
+            }
+            document.getElementById("output").innerText = result;
+        }
+    </script>
+</body>
+</html>
