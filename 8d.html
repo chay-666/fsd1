@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Loop Through Object</title>
+</head>
+<body>
+    <h2>Loop Through Object Data</h2>
+    <button onclick="printForIn()">For-In Loop</button>
+    <button onclick="printForEach()">ForEach Loop</button>
+    <button onclick="printForOf()">For-Of Loop</button>
+    <h3 id="output"></h3>
+    <script>
+        // Sample Object
+        let person = {
+            name: "Alice",
+            age: 25,
+            country: "USA",
+            hobbies: ["Reading", "Traveling", "Gaming"]
+        };
+        // For-In Loop: Iterates over object properties
+        function printForIn() {
+            let result = "For-In Loop:\n";
+            for (let key in person) {
+                result += `${key}: ${person[key]}\n`;
+            }
+            document.getElementById("output").innerText = result;
+        }
+        // ForEach Loop: Iterates over an array inside the object
+        function printForEach() {
+            let result = "ForEach Loop (Hobbies):\n";
+            person.hobbies.forEach((hobby, index) => {
+                result += `${index + 1}. ${hobby}\n`;
+            });
+            document.getElementById("output").innerText = result;
+        }
+        // For-Of Loop: Iterates over an array inside the object
+        function printForOf() {
+            let result = "For-Of Loop (Hobbies):\n";
+            for (let hobby of person.hobbies) {
+                result += `${hobby}\n`;
+            }
+            document.getElementById("output").innerText = result;
+        }
+    </script>
+</body>
+</html>
