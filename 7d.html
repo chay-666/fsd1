@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Math Object Example</title>
+</head>
+<body>
+    <h2>Math Object Demo</h2>
+    <button onclick="generateNumber()">Generate Random Number</button>
+    <h3 id="output"></h3>
+    <script>
+        function generateNumber() {
+            let num = Math.floor(Math.random() * 100) + 1; // Random number from 1 to 100
+            let sqrt = Math.sqrt(num); // Square root
+            let rounded = Math.round(sqrt); // Rounded value
+            document.getElementById("output").innerHTML = 
+                `Random Number: ${num} <br> Square Root: ${sqrt} <br> Rounded: ${rounded}`;
+        }
+    </script>
+</body>
+</html>
