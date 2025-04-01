@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Number Operations</title>
+</head>
+<body>
+    <h2>Number Operations</h2>
+    <label>Enter a Number: </label>
+    <input type="number" id="numInput" min="1">
+    <button onclick="calculateFactorial()">Factorial</button>
+    <button onclick="generateFibonacci()">Fibonacci Series</button>
+    <button onclick="findPrimes()">Prime Numbers</button>
+    <button onclick="checkPalindrome()">Palindrome Check</button>
+    <h3 id="output"></h3>
+    <script>
+        // Factorial function
+        function calculateFactorial() {
+            let num = parseInt(document.getElementById("numInput").value);
+            let fact = 1;
+            for (let i = 1; i <= num; i++) {
+                fact *= i;
+            }
+            document.getElementById("output").innerText = `Factorial of ${num} is: ${fact}`;
+        }
+        // Fibonacci Series function
+        function generateFibonacci() {
+            let num = parseInt(document.getElementById("numInput").value);
+            let fibSeries = [0, 1];
+            for (let i = 2; i < num; i++) {
+                fibSeries[i] = fibSeries[i - 1] + fibSeries[i - 2];
+            }
+            document.getElementById("output").innerText = `Fibonacci Series up to ${num}: ${fibSeries.slice(0, num).join(", ")}`;
+        }
+        // Prime Numbers function
+        function findPrimes() {
+            let num = parseInt(document.getElementById("numInput").value);
+            let primes = [];
+            for (let i = 2; i <= num; i++) {
+                let isPrime = true;
+                for (let j = 2; j <= Math.sqrt(i); j++) {
+                    if (i % j === 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+                if (isPrime) {
+                    primes.push(i);
+                }
+            }
+            document.getElementById("output").innerText = `Prime numbers up to ${num}: ${primes.join(", ")}`;
+        }
+        // Palindrome check function
+        function checkPalindrome() {
+            let num = document.getElementById("numInput").value;
+            let reversed = num.split("").reverse().join("");
+            let message = (num == reversed) ? `${num} is a Palindrome ` : `${num} is NOT a Palindrome `;
+            document.getElementById("output").innerText = message;
+        }
+    </script>
+</body>
+</html>
