@@ -1,0 +1,73 @@
+1.Descendent:
+Program:
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div p {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>This paragraph inside a div is blue.</p>
+    </div>
+    <p>This paragraph outside the div is not styled.</p>
+</body>
+</html>
+2.Child:
+Program:
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div > p {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>This direct child paragraph inside the div is green.</p>
+        <div>
+            <p>This nested paragraph is not styled.</p>
+        </div>
+    </div>
+</body>
+</html>
+3.Adjacent sibiling
+Program:
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h1 + p {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>This is a heading.</h1>
+    <p>This paragraph comes immediately after the heading and is red.</p>
+    <p>This paragraph is not affected.</p>
+</body>
+</html>
+4.General Sibiling
+Program:
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h1 ~ p {
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+    <h1>This is a heading.</h1>
+    <p>This paragraph is a sibling of the heading and is purple.</p>
+    <p>This one is also purple.</p>
+</body>
+</html>
+  
