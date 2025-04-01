@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <title>Date Object Example</title>
+</head>
+<body>
+    <h2>Current Date & Time</h2>
+    <button onclick="showDateTime()">Show Date & Time</button>
+    <h3 id="output"></h3>
+    <script>
+        function showDateTime() {
+            let now = new Date(); // Create a Date object
+            let dateTime = now.toLocaleString(); // Get formatted date & time
+                    document.getElementById("output").innerText = "📅 " + dateTime;
+        }
+    </script>
+</body>
+</html>
