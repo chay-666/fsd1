@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attribute Selectors Demonstration</title>
+    <style>
+        /* Attribute contains a specific word */
+        [class~="highlight"] {
+            color:green;
+        }
+        /* Attribute starts with */
+        [href^="https://"] {
+            color: red;        
+        }
+        /* Attribute ends with */
+        [href$=".org"] {
+            color:aqua;
+        }
+        /* Attribute contains a substring */
+        [href*="example"] {
+            color: indigo;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Attribute Selectors All-in-One</h1>
+    <p class="highlight">This paragraph is styled because its class contains the word "highlight".</p>
+    <a href="https://www.codechef.com/">This link starts with "https://", contains "example", and ends with ".com"</a>
+    <br>
+    <a href="https://www.cambridge.org/">This link starts with "https://" and ends with ".org"</a>
+    <br>
+    </body>
+</html>
