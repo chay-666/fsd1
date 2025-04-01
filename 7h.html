@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>User-Defined Object Example</title>
+</head>
+<body>
+    <h2>Simple User Object</h2>
+    <button onclick="showPerson()">Create Person</button>
+    <h3 id="output"></h3>
+    <script>
+        // Constructor function for Person
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            // Method to display person details
+            this.getInfo = function() {
+                return `Name: ${this.name}, Age: ${this.age}`;
+            };
+        }
+        function showPerson() {
+            let user = new Person("Alice", 25); // Creating an object
+            document.getElementById("output").innerText = user.getInfo();
+        }
+    </script>
+</body>
+</html>
