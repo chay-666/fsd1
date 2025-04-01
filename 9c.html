@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Registration Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form onsubmit="return validateForm()">
+        <label>Name:</label>
+        <input type="text" id="name">
+        <span id="nameError" class="error"></span>
+        <br>
+        <label>Mobile:</label>
+        <input type="text" id="mobile">
+        <span id="mobileError" class="error"></span>
+        <br>
+        <label>Email:</label>
+        <input type="text" id="email">
+        <span id="emailError" class="error"></span>
+        <br>
+        <button type="submit">Register</button>
+    </form>
+    <script>
+        function validateForm() {
+            let isValid = true;
+            // Get input values
+            let name = document.getElementById("name").value;
+            let mobile = document.getElementById("mobile").value;
+            let email = document.getElementById("email").value;
+            // Regular Expressions for validation
+            let namePattern = /^[A-Za-z][A-Za-z0-9]{5,}$/; // Starts with a letter, followed by at least 5 alphanumeric chars
+            let mobilePattern = /^[0-9]{10}$/; // Exactly 10 digits
+            let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/; // Standard email pattern
+            // Name Validation
+            if (!namePattern.test(name)) {
+                document.getElementById("nameError").innerText = "Invalid name! Must start with a letter and be at least 6 characters long.";
+                isValid = false;
+            } else {
+                document.getElementById("nameError").innerText = "";
+            }
+            // Mobile Validation
+            if (!mobilePattern.test(mobile)) {
+                document.getElementById("mobileError").innerText = "Invalid mobile number! Must be exactly 10 digits.";
+                isValid = false;
+            } else {
+                document.getElementById("mobileError").innerText = "";
+            }
+            // Email Validation
+            if (!emailPattern.test(email)) {
+                document.getElementById("emailError").innerText = "Invalid email! Format: example@domain.com";
+                isValid = false;
+            } else {
+                document.getElementById("emailError").innerText = "";
+            }
+            return isValid; // Return true if all validations pass, otherwise false
+        }
+    </script>
+</body>
+</html>
