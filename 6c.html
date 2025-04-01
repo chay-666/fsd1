@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>JavaScript Input Methods</title>
+    <script>
+        // 1. Taking input using prompt()
+        function getPromptInput() {
+            let name = prompt("Enter your name:");
+            if (name) {
+                document.getElementById("promptOutput").innerText = "Hello, " + name + "!";
+            }
+        }
+        // 2. Taking input using HTML form
+        function getFormInput() {
+            let inputValue = document.getElementById("formInput").value;
+            document.getElementById("formOutput").innerText = "You entered: " + inputValue;
+        }
+        // 3. Taking input using confirm()
+        function getConfirmInput() {
+            let response = confirm("Do you like JavaScript?");
+            document.getElementById("confirmOutput").innerText = response ? "You like JavaScript!" : "You don't like JavaScript.";
+        }
+
+        // 4. Taking input using event listener (keypress)
+        function detectKey(event) {
+            document.getElementById("keyOutput").innerText = "You pressed: " + event.key;
+        }
+    </script>
+</head>
+<body>
+    <h1>JavaScript Input Methods</h1>
+    <!-- 1. Using Prompt -->
+    <button onclick="getPromptInput()">Enter Name (Prompt)</button>
+    <p id="promptOutput"></p>
+    <!-- 2. Using Form Input -->
+    <input type="text" id="formInput" placeholder="Type something">
+    <button onclick="getFormInput()">Submit</button>
+    <p id="formOutput"></p>
+    <!-- 3. Using Confirm -->
+    <button onclick="getConfirmInput()">Confirm Example</button>
+    <p id="confirmOutput"></p>
+    <!-- 4. Using Key Event -->
+    <p>Press any key in the box below:</p>
+    <input type="text" onkeypress="detectKey(event)">
+    <p id="keyOutput"></p>
+</body>
+</html>
+
