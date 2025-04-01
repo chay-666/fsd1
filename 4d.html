@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Combined CSS Example</title>
+    <style>
+        /* First line of a paragraph */
+        p::first-line {
+            color: blue;
+            font-weight: bold;
+        }
+
+        /* First character of a paragraph */
+        p::first-letter {
+            color: red;
+            font-size: 2em;
+        }
+
+        /* Adding content before and after elements */
+        h1::before {
+            content: "$ ";
+            color: gold;
+        }
+
+        h1::after {
+            content: " $";
+            color: gold;
+        }
+
+        /* Customizing list marker styles */
+        ul {
+            list-style-type: square; /* Changing markers to squares */
+        }
+        ol {
+            list-style-type: upper-roman; /* Using Roman numerals for ordered lists */
+        }
+    </style>
+</head>
+<body>
+    <h1>Combined CSS Styling</h1>
+    <p>This is a paragraph demonstrating multiple pseudo-elements and styles.<br> The first line is blue and bold, and the first character is larger and red.</p>
+    <ul>
+        <li>First item in an unordered list</li>
+        <li>Second item in an unordered list</li>
+    </ul>
+    <ol>
+        <li>First item in an ordered list</li>
+        <li>Second item in an ordered list</li>
+    </ol>
+</body>
+</html>
