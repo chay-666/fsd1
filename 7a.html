@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Example</title>
+</head>
+<body>
+    <h2 id="text">Hello, World!</h2>
+    <button onclick="changeText()">Change Text</button>
+    <button onclick="changeBgColor()">Change Background</button>
+    <button onclick="addParagraph()">Add Paragraph</button>
+    <script>
+        function changeText() {
+            document.getElementById("text").innerText = "Text Changed!";
+        }
+        function changeBgColor() {
+            document.body.style.backgroundColor = "#f4a261"; // Changing background color
+        }
+        function addParagraph() {
+            let newPara = document.createElement("p"); // Create a new paragraph
+            newPara.innerText = "This is a new paragraph added dynamically!";
+            document.body.appendChild(newPara); // Append it to the body
+        }
+    </script>
+</body>
+</html>
